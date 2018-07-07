@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.programmingfree</groupId>
+    <artifactId>pf-securing-web</artifactId>
+    <version>0.1.0</version>
+	<packaging>war</packaging>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>1.2.2.RELEASE</version>
+    </parent>
+
+    <dependencies>
+        <dependency>
+    		<groupId>org.apache.tomcat.embed</groupId>
+    		<artifactId>tomcat-embed-jasper</artifactId>
+    		<scope>provided</scope>
+		</dependency>
+		<dependency>
+    		<groupId>javax.servlet</groupId>
+    		<artifactId>jstl</artifactId>
+		</dependency>
+		<!-- tag::web[] -->
+		<dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+		<!-- end::web[] -->
+        <!-- tag::security[] -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+        <!-- end::security[] -->
+	<dependency>
+	    <groupId>org.springframework.boot</groupId>
+	    <artifactId>spring-boot-starter-mail</artifactId>
+	</dependency>
+        <!-- JDBC -->      
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jdbc</artifactId>
+            </dependency>
+
+        <!-- MySQL -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+        </dependency>
+
+<dependency>
+    <groupId>batik</groupId>
+	<artifactId>com.batik</artifactId>
+    <version>1.0</version>
+    <scope>system</scope>
+    <systemPath>${basedir}/src/main/resources/lib/batik.jar</systemPath>
+</dependency>
+<dependency>
+    <groupId>avalon-framework-cvs-20020806</groupId>
+	<artifactId>com.avalon</artifactId>
+    <version>1.0</version>
+    <scope>system</scope>
+    <systemPath>${basedir}/src/main/resources/lib/avalon-framework-cvs-20020806.jar</systemPath>
+</dependency>
+<dependency>
+    <groupId>fop</groupId>
+	<artifactId>com.fop</artifactId>
+    <version>1.0</version>
+    <scope>system</scope>
+    <systemPath>${basedir}/src/main/resources/lib/fop.jar</systemPath>
+</dependency>
+<dependency>
+    <groupId>jdom-1.0</groupId>
+	<artifactId>com.jdom</artifactId>
+    <version>1.0</version>
+    <scope>system</scope>
+    <systemPath>${basedir}/src/main/resources/lib/jdom-1.0.jar</systemPath>
+</dependency>
+<dependency>
+    <groupId>xalan</groupId>
+	<artifactId>com.xalan</artifactId>
+    <version>1.0</version>
+    <scope>system</scope>
+    <systemPath>${basedir}/src/main/resources/lib/xalan.jar</systemPath>
+</dependency>
+<dependency>
+    <groupId>commons-io</groupId>
+	<artifactId>org.apache</artifactId>
+    <version>2.2</version>
+    <scope>system</scope>
+    <systemPath>${basedir}/src/main/resources/lib/commons-io-2.2.jar</systemPath>
+</dependency>
+<dependency>
+    <groupId>commons-fileupload</groupId>
+	<artifactId>com.fileupload</artifactId>
+    <version>1.2.2</version>
+    <scope>system</scope>
+    <systemPath>${basedir}/src/main/resources/lib/commons-fileupload-1.2.2.jar</systemPath>
+</dependency>
+<dependency>
+			<groupId>unirest-java</groupId>
+			<artifactId>unirest-java</artifactId>
+			<version>1.4.9</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/src/main/resources/lib/unirest-java-1.4.9.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>json</groupId>
+			<artifactId>json</artifactId>
+			<version>20160810</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/src/main/resources/lib/json-20160810.jar</systemPath>
+		</dependency>
+	    	<dependency>
+			<groupId>commons-codec</groupId>
+			<artifactId>commons-codec</artifactId>
+			<version>1.6</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/src/main/resources/lib/commons-codec-1.6.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>httpclient</groupId>
+			<artifactId>httpclient</artifactId>
+			<version>4.3.6</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/src/main/resources/lib/httpclient-4.3.6.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>httpcore-nio</groupId>
+			<artifactId>httpcore-nio</artifactId>
+			<version>4.4.4</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/src/main/resources/lib/httpcore-nio-4.4.4.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>httpcore</groupId>
+			<artifactId>httpcore</artifactId>
+			<version>4.3.3</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/src/main/resources/lib/httpcore-4.3.3.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>httpasyncclient</groupId>
+			<artifactId>httpasyncclient</artifactId>
+			<version>4.0-beta4</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/src/main/resources/lib/httpasyncclient-4.0-beta4.jar</systemPath>
+		</dependency>
+	 </dependencies>
+
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+</project>

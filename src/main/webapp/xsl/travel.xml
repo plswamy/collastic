@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<root>
+  		<data>
+    <!--************** XML DATA **************-->
+   			 <main>
+       				 <xslPath>E:\sas-master\src\main\webapp\xsl</xslPath>
+    				 <imgPath>E:\sas-master\src\main\webapp\support\img</imgPath>
+      				<spiderwebImgPath>E:\sas-master\src\main\webapp\support\img\uploadedImages</spiderwebImgPath>
+      				<pdf_heading>TRAVEL RISK MANAGEMENT SELF-ASSESSMENT</pdf_heading>
+      				<pdf_sub_haading>Your Summary</pdf_sub_haading>
+      				<pdf_score_text>You scored</pdf_score_text>
+      				<pdf_section_sub_heading1>RECOMMENDED BEST PRACTICE FOR ACHIEVED AND</pdf_section_sub_heading1>
+      				<pdf_section_sub_heading2>UNACHIEVED</pdf_section_sub_heading2>
+      				<pdf_section_sub_heading3>CRITERIA</pdf_section_sub_heading3>
+      				<Company_Logo>International SOS_RGB_hr.jpg</Company_Logo>
+      				<range>range.jpg</range>
+      				<correctAnswer>correct_answer.jpg</correctAnswer>
+      				<ticksNcrosses>Ticks and crosses.png</ticksNcrosses>
+					<wrongAnswer>wrong_answer.jpg</wrongAnswer>
+      				<spiderwebFileName>range.jpg</spiderwebFileName>
+      				<wallpaper>wallpaper.jpg</wallpaper>
+					<strapline>StraplineSingle_RGB_hr.jpg</strapline>
+       				<user>abc</user>
+       				<companyname>company name</companyname>
+					<rheading>Report Link :</rheading>
+					<rlink>Click Here for report</rlink>
+					<rurl>http://localhost:8080/report</rurl>
+					<clink>http://www.internationalsos.com</clink>
+					<curl>http://www.internationalsos.com</curl>
+					<cmailid>inquiries@internationalsos.com</cmailid>
+       				<score>100%</score>
+					<desc11> You are well progressed in the design and  maturity </desc11>
+					<desc12> of your risk mitigation program for globally mobile </desc12>
+					 <desc13> employees. Minor improvements and ongoing monitoring </desc13>
+					 <desc14> is appropriate by the responsible cross- functional  team.</desc14>
+					 <desc21>Integrated Travel Risk Mitigation, a Duty of Care Plan-Do-Check approach</desc21>
+					<desc22>International SOS commissioned the first ever Duty of Care whitepaper. This reviews employers Duty of Care 	responsibilities and offers guidelines for the development of appropriate risk management strategies.</desc22>
+					<desc23>Following this sector first, our clients requested more research, tools and advice. Resulting in the 			commission of our Duty of Care and Travel Risk Management Global Benchmarking Study the first comprehensive and
+						authoritative research publication on the topic.</desc23>
+					<desc24>The paper outlines a framework for organisations to ensure they are adequately meeting their Duty of Care 		obligations. The framework follows the 'plan-do-check' approach.</desc24>
+					<desc25>For more information</desc25>
+					<desc31> Need assistance with any of your responses or recommendations? </desc31>
+					<desc32>Contact International SOS - </desc32>					
+					<desc33>The recommendations, suggested actions and broad maturity measure are for guidance purposes only and do not 	constitute formal advice. Please</desc33>
+					<desc34>contact International SOS for customised analysis and recommendations specific to your organisation.</desc34>
+      		 </main>
+ 	    </data>
+	</root>
