@@ -1,4 +1,4 @@
-drop table registrationfields;
+drop table IF EXISTS registrationfields;
 Create table registrationfields(id integer PRIMARY KEY AUTO_INCREMENT, fieldname varchar(100), fielddispname varchar(400), fieldtype varchar(100),showflag varchar(10),options varchar(300), forder integer, lang varchar(20));
 
 
@@ -22,47 +22,44 @@ insert into registrationfields values(17, 'f17', 'I agree to receive Internation
 insert into registrationfields values(18, 'f18', 'By submitting, I agree to International SOS Terms & Conditions and Privacy Policy. Read more about our Privacy & Cookies policy and our GDPR Statement, do not hesitate to contact us  should you have any questions or would like your contact information and activities to be completely removed from our database.', 'check', 'true', null, 18, 'english');
 
 
-drop table registrationinfo;
+drop table IF EXISTS registrationinfo;
 Create table registrationinfo(id integer PRIMARY KEY AUTO_INCREMENT, f1 varchar(256), f2 varchar(256), f3 varchar(256), f4 varchar(256), f5 varchar(256), f6 varchar(256), f7 varchar(256), f8 varchar(256), f9 varchar(256), f10 varchar(256), f11 varchar(256), f12 varchar(256), f13 varchar(256), f14 varchar(256), f15 varchar(256), f16 varchar(256), lang varchar(20));
 ALTER TABLE registrationinfo AUTO_INCREMENT = 1000001;
 
-drop table questions;
+drop table IF EXISTS questions;
 Create table questions(id integer PRIMARY KEY AUTO_INCREMENT, qtype varchar(70),imagename varchar(100),qtext varchar(1000), qdesc varchar(1000), pqid varchar(100), qsubtype varchar(50), qorder integer, lang varchar(20));
-Insert into questions values(1, 'plan', 'plan-1.png','Can you locate all your mobile workers?','locate all your mobile workers description goes', null, 'Assess risks', 1, 'english');
-Insert into questions values(2, 'plan','plan-2.png','Do you assess the risks to your people in locations they work in?','Employees risk accessibilty description goes', null, 'Assess risks', 2, 'english');
-Insert into questions values(3, 'plan','plan-3.png','Do you monitor the type and quantity of incidents your people have been involved in over the last 2-3 years?','Type and quantity of incidents description goes',null,'Assess risks', 3, 'english'); 
-Insert into questions values(4, 'plan','plan-4.png','Does your company understand its Duty of Care obligations?','Duty of care obligations description goes',null,'Assess risks', 4, 'english');
-Insert into questions values(5, 'plan','plan-5.png','Do your policies cover the health, safety and security of mobile workers?','Policies description goes', null,'Plan', 5, 'english');
-Insert into questions values(6, 'plan','plan-6.png','Do you know who is responsible for Travel Risk Management in your organisation?','Travel Risk Management description goes',null,'Plan', 6, 'english');
-Insert into questions values(7, 'plan','plan-7.png','Do you know how to integrate the components of Travel Risk Management into your risk management system?','Integration of travel risk management components into risk management system description goes ',null,'Plan', 7, 'english');
-Insert into questions values(8, 'do','do-8.png', 'Do you have a travel approval process that includes travel risk assessments?','Travel approval process description goes',null,'Policies & processess', 1, 'english');
-Insert into questions values(9, 'do','do-9.png',  'Do you have plans in place if things go wrong?','Alternate plans if things goes wrong description goes',null,'Policies & processess', 2, 'english');
-Insert into questions values(10, 'do','do-10.png', 'Do you check the safety and security of hotels and accommodation?','To check the safety and security of hotels',null,'Manage mobility', 3,'english');
-Insert into questions values(11, 'do','do-11.png', 'Do you know how many RTA\'s (Road Traffic Accidents) your company has experienced in the last 3 years?','Road Traffic Accidents experiences description goes ',null,'Manage mobility', 4,'english');
-Insert into questions values(12, 'do','do-12.png', 'Do you assess the fitness for travel for mobile workers?','Fitness for travel mobile workers description goes ',null,'Manage mobility', 5,'english');
-Insert into questions values(13, 'do','do-13.png', 'Do you have a programme to help people understand and manage their existing health issues whist away?','Managing health issues description goes',null,'Manage mobility', 6,'english');
-Insert into questions values(14, 'do','do-14.png', 'Do you have measures in place to check the health of people returning to work?','Managing health issues recovering description goes',null,'Manage mobility', 7,'english');
-Insert into questions values(15, 'do','do-15.png', 'Is your workforce aware of your Travel Risk Mitigation policies and their responsibilities?','Employees Travel Risk Mitigation plans and  responsibilities description goes',null,'Communicate, Educate and Train', 8,'english');
-Insert into questions values(16, 'do','do-16.png', 'Do your people receive training about the risks at the destinations they are travelling to?','Training about risks at the destinations when employee travels ',null,'Communicate, Educate and Train', 9,'english');
-Insert into questions values(17, 'do','do-17.png', 'Do your managers understand their responsibilities when approving travel?','Responsibilities of managers when approving travel description goes ',null,'Communicate, Educate and Train', 10,'english');
-Insert into questions values(18, 'do','do-18.png','Do you have a system in place to inform your people of a situation that may impact them?', 'Informing about a situation that impact people description goes', null,'Locate, Monitor, Inform',11,'english');
-Insert into questions values(19, 'do','do-19.png', 'Do you have a system in place to quickly account for people in an emergency?','Emergency account for employees description goes',null,'Locate, Monitor, Inform',12,'english');
-Insert into questions values(20, 'do','do-20.png', 'Do your mobile workers have access to advice and support 24/7?','24/7 accessibility to advice and support description goes',null,'Advice, assist and evacuate', 13,'english');
-Insert into questions values(21, 'do','do-21.png','Do your mobile workers have access to relevant information & advice to support them when making these risk assessments?','Relevant information & advice to support them when making these risk assessments description goes',null,'Advice, assist and evacuate', 14, 'english');
-Insert into questions values(22, 'check','check-22.png', 'Are your plans and procedures tested for effectiveness?','Effectiveness testing for plans and procedures description goes',null,'Control and review', 1,'english');
-Insert into questions values(23, 'check','check-23.png', 'Do you have a system in place to ensure compliance with your policies and procedures?','System of policies and procedures description goes',null,'Control and review', 2, 'english');
+Insert into questions values(1, 'plan', '1.png','Does your school assess the risks of the locations that your staff and students travel to?','Is the source of your information current, verified, unbiased, and location-specific?', null, 'Assess risks', 1, 'english');
+Insert into questions values(2, 'plan','2.png','Does your school have travel risk management policies and procedures in place to ensure the health, safety and security of staff and students while travelling overseas?','Do you ensure all processes are documented and consistently followed by all staff?', null, 'Assess risks', 2, 'english');
+Insert into questions values(3, 'plan','3.png','Does this travel policy or procedure comply with any particular standard?','Is this standard nationally recognised?',null,'Assess risks', 3, 'english'); 
+Insert into questions values(4, 'plan','4.png','Has the travel procedure been signed off by the school''s board?','',null,'Assess risks', 4, 'english');
+Insert into questions values(5, 'plan','5.png','Does the travel procedure describe ways to deal with safety, and health and security issues experienced on overseas excursions?','Has there been any health or security incident(s) that the procedure has had to respond to? Was it reported back to management in a timely manner? Does your school''s travel procedure map to your school''s overall crisis management plan?', null,'Plan', 5, 'english');
+Insert into questions values(6, 'plan','6.png','Does the travel procedure define the travel risk management roles and responsibilities of staff, and designate who will carry out specific tasks regarding the planning and conduct of overseas school trips?','Do all staff/ trip leaders understand what their roles and responsibilities are? Is it documented?',null,'Plan', 6, 'english');
+Insert into questions values(7, 'plan','7.png',' Does the travel procedure describe the delegation of certain travel risk management responsibilities to an outside organisation (such as tour operators or in-country hosts)?','Does the procedure refer to the due diligence requirements regarding the selection and use of third party providers?',null,'Plan', 7, 'english');
+Insert into questions values(8, 'do','8.png', 'Do trip leaders actively ensure that travel risk management policies and procedures are followed whilst leading overseas school trips?','How is this currently tracked and managed? Are there any difficulties in policing this? Do you make it easy for teachers to report incidents in a timely manner?',null,'Policies & processess', 1, 'english');
+Insert into questions values(9, 'do','9.png',  'Is there a process that ensures destination-specific health requirements are reviewed such as (1) Vaccinations (2) Medications, both existing and destination-specific (eg. Anti- malarials and (3) First aid kits?','What is the current process and is it facilitated by a reputable provider with specialist in-country knowledge? Is the process documented?',null,'Policies & processess', 2, 'english');
+Insert into questions values(10, 'do','10.png', 'In the lead up to the trip, does your school have a formal mechanism for monitoring changes in country situations?','Is the mechanism automated or is it manual? Is the process recorded? Is the information source current, verified, unbiased, and location-specific?',null,'Manage mobility', 3,'english');
+Insert into questions values(11, 'do','11.png', 'Does the school have access to medical personnel that can advise on how to manage pandemic or endemic diseases that may affect your travelling staff and students?','Do they have specific in-country knowledge, in particular relating to the standard of medical infrastructure, infection containment and control measures?',null,'Manage mobility', 4,'english');
+Insert into questions values(12, 'do','12.png', 'Does the school check the safety and security of hotels and accommodation?','How is this measured and against what standard?',null,'Manage mobility', 5,'english');
+Insert into questions values(13, 'do','13.png', 'Does the school have a way to audit clinics/ hospitals in the destinations that staff and students travel to?','How is this measured and against what standard?',null,'Manage mobility', 6,'english');
+Insert into questions values(14, 'do','14.png', 'Are students provided with training to help them better identify health, safety and security hazards whilst on exchange?','Does the training provide specific advice regarding what to do if an incident occurs?',null,'Manage mobility', 7,'english');
+Insert into questions values(15, 'do','15.png', 'Are trip leaders provided with briefings or training to help them better identify and respond to threats/incidents/crises that could affect their overseas trips?','',null,'Communicate, Educate and Train', 8,'english');
+Insert into questions values(16, 'do','16.png', 'Are the school’s senior leadership provided with training to help them better respond to a crisis affecting their staff and students in a foreign country?','What resources and training are made available? Who is it provided by and how does it link with the support mechanisms you have in place for incident management overseas eg. insurance?',null,'Communicate, Educate and Train', 9,'english');
+Insert into questions values(17, 'do','17.png', 'Does the school have a formal system in place to inform management, staff and trip leaders of an incident or developing situation that may impact current/future trips?','What resources and training are made available? Who is it provided by and how does it link with the school''s existing/domestic crisis management plans? How often are these plans tested?',null,'Communicate, Educate and Train', 10,'english');
+Insert into questions values(18, 'do','18.png', 'Do staff have access to advice and support 24/7?', 'Is the process automated? Are the information sources current, verified, unbiased, and location-specific?', null,'Locate, Monitor, Inform',11,'english');
+Insert into questions values(19, 'do','19.png', 'In the event of a health or security incident, does the school have relationships with global or local providers that have the capability to provide on-the-ground support and management of the situation, or are you relying solely on your insurer to respond?','How do you assess the capability of providers? How do you ensure you have access to these providers in a crisis?',null,'Locate, Monitor, Inform',12,'english');
+Insert into questions values(20, 'do','20.png', 'Does your provider facilitate follow up with your local health care provider upon return home?','',null,'Advice, assist and evacuate', 13,'english');
+Insert into questions values(21, 'check','21.png', 'Has an initial or follow up review been conducted of your school’s existing travel risk management policies and procedures to identify any shortfalls or areas for improvement?','The review should compare existing policies and procedures with any applicable legislation, administrative rules, codes of practice and other requirements (such as insurance requirements) that the school has an obligation to comply with. Additional consideration should be given to industry best practice and peer benchmarking, both locally and internationally.',null,'Control and review', 1,'english');
+Insert into questions values(22, 'check','22.png', 'Does your school systematically record and store documents associated with its travel risk management program?','Are the records centrally managed and available to be audited if required?',null,'Control and review', 2, 'english');
+Insert into questions values(23, 'check','23.png', 'Is there a system documenting that staff and parents have been made aware of risks associated with travel, and measures put in place to avoid or mitigate these risks?','What is the current process and how is it supported? Does it rely solely on the action of an individual? How is maintained and recorded?',null,'Control and review', 3, 'english');
+Insert into questions values(24, 'check','24.png', 'Are there arrangements in place to (1) Test the school’s compliance with its travel risk management policies and procedures (2) Regularly review and improve the school’s travel risk management policies and procedures? This can be carried out in a number of ways, including:a. Incident investigations b. Management reviews c. Reporting on and evaluating key performance indicators d. Internal / external auditing','What are the processes currently in place? How do you capture data and how is it reported? Who is responsible for managing the process? Is it reviewed by the school council for improvement?',null,'Control and review', 4, 'english');
 
-
-
-drop table answers;
+drop table IF EXISTS answers;
 Create table answers(id integer PRIMARY KEY, lang varchar(20), answertype varchar(10), answertypevalue varchar(100));
 Insert into answers values(1, 'english', 'yes', 'Yes');                                      
 Insert into answers values(2, 'english', 'no', 'No');
 Insert into answers values(3, 'english', 'notsure', 'Not Sure');
 
-
-
-drop table labels;
+drop table IF EXISTS labels;
 Create table labels(id integer PRIMARY KEY AUTO_INCREMENT, lang varchar(20), labelkey varchar(100) , labelvalue varchar(1000));
 Insert into labels values(1, 'english', 'welcomeHeader', 'Welcome to the travel risk mitigation self-assessment tool.');                                      
 Insert into labels values(2, 'english', 'welcomeDesc', 'This best practice travel risk mitigation tool is based on our Duty of Care Plan-Do-Check approach. At the end of this assessment you will receive a report outlining:');
@@ -88,10 +85,7 @@ Insert into labels values(21, 'english', 'secName1', 'Analyse');
 Insert into labels values(22, 'english', 'secName2', 'Mitigate');
 Insert into labels values(23, 'english', 'secName3', 'Control');
 
-
-
-
-drop table businessindustry;
+drop table IF EXISTS businessindustry;
 Create table businessindustry(id integer PRIMARY KEY, lang varchar(20), optkey varchar(1000), optvalue varchar(1000));
 insert into businessindustry value (1, 'english', 'Agent/Broker', 'Agent/Broker');
 insert into businessindustry value (2, 'english', 'Automobile,Aerospace and Defence Industry', 'Automobile,Aerospace and Defence Industry');
@@ -135,7 +129,7 @@ insert into businessindustry value (39, 'english', 'Transport Services', 'Transp
 insert into businessindustry value (40, 'english', 'Travel, Tourism and Hospitality', 'Travel, Tourism and Hospitality');
 insert into businessindustry value (41, 'english', 'Mining', 'Mining');
 
-drop table country;
+drop table IF EXISTS country;
 Create table country(id integer PRIMARY KEY ,lang varchar(20),optkey varchar(1000), optvalue varchar(1000));
 INSERT INTO country VALUES ('1', 'english', 'Afghanistan', 'Afghanistan');
 INSERT INTO country VALUES ('2', 'english', 'Aland Islands', 'Aland Islands');
@@ -193,7 +187,7 @@ INSERT INTO country VALUES ('53', 'english', 'Congo', 'Congo');
 INSERT INTO country VALUES ('54', 'english', 'Congo, Democratic Republic', 'Congo, Democratic Republic');
 INSERT INTO country VALUES ('55', 'english', 'Cook Islands', 'Cook Islands');
 INSERT INTO country VALUES ('56', 'english', 'Costa Rica', 'Costa Rica');
-INSERT INTO country VALUES ('57', 'english', 'Cote d\'Ivoire', 'Cote d\'Ivoire');
+INSERT INTO country VALUES ('57', 'english', 'Cote d''Ivoire', 'Cote d''Ivoire');
 INSERT INTO country VALUES ('58', 'english', 'Croatia', 'Croatia');
 INSERT INTO country VALUES ('59', 'english', 'Cuba', 'Cuba');
 INSERT INTO country VALUES ('60', 'english', 'Curacao', 'Curacao');
@@ -394,22 +388,22 @@ INSERT INTO country VALUES ('254', 'english', 'Yemen', 'Yemen');
 INSERT INTO country VALUES ('255', 'english', 'Zambia', 'Zambia');
 INSERT INTO country VALUES ('256', 'english', 'Zimbabwe', 'Zimbabwe');
 
-drop table state;
+drop table IF EXISTS state;
 Create table state(id integer PRIMARY KEY ,statetype varchar(20), lang varchar(20));
 
 
 
-drop table userresponse;
+drop table IF EXISTS userresponse;
 Create table userresponse(id integer PRIMARY KEY AUTO_INCREMENT, userid integer, qid integer, qresponse varchar(10));
 
 
-drop table gender;
+drop table IF EXISTS gender;
 Create table gender(id integer PRIMARY KEY, lang varchar(20), optkey varchar(1000), optvalue varchar(1000));
 insert into gender value (1, 'english', 'male', 'Male');
 insert into gender value (2, 'english', 'female', 'Female');
 
 
-drop table qualifications;
+drop table IF EXISTS qualifications;
 Create table qualifications(id integer PRIMARY KEY, lang varchar(20), optkey varchar(1000), optvalue varchar(1000));
 insert into qualifications value (1, 'english', 'phd', 'Phd');
 insert into qualifications value (2, 'english', 'pg', 'Post Graduation');
@@ -418,7 +412,7 @@ insert into qualifications value (4, 'english', 'inter', 'Intermediate');
 insert into qualifications value (5, 'english', 'ssc', 'SSC');
 
 
-drop table expertise;
+drop table IF EXISTS expertise;
 Create table expertise(id integer PRIMARY KEY, lang varchar(20), optkey varchar(1000), optvalue varchar(1000));
 insert into expertise value (1, 'english', 'accounts', 'Accounts');
 insert into expertise value (2, 'english', 'sales', 'Sales');
@@ -426,76 +420,12 @@ insert into expertise value (3, 'english', 'it', 'IT');
 insert into expertise value (4, 'english', 'hardware', 'Hardware');
 
 
-drop table domain;
+drop table IF EXISTS domain;
 Create table domain(id integer PRIMARY KEY, lang varchar(20), optkey varchar(1000), optvalue varchar(1000));
 insert into domain value (1, 'english', 'banking', 'Banking');
 insert into domain value (2, 'english', 'finance', 'Finance');
 insert into domain value (3, 'english', 'software', 'Software');
 insert into domain value (4, 'english', 'pharmaceutical', 'Pharmaceutical');
-
-Insert into questions values(id, 'plan', 'plan-1.png','Pouvez-vous localiser tous vos travailleurs mobiles?','Recherchez la description de tous les travailleurs mobiles', null, 'Évaluer les risques', 1, 'french');
-Insert into questions values(id, 'plan','plan-2.png','Évaluez-vous les risques pour vos personnes dans les endroits où ils travaillent?','La description de laccessibilité au risque des employés va', null, 'Évaluer les risques', 2, 'french');
-Insert into questions values(id, 'plan','plan-3.png','Surveillez-vous le type et la quantité dincidents sur lesquels vos personnes ont participé au cours des 2 ou 3 dernières années?','Le type et la quantité de la description des incidents vont',null,'Évaluer les risques', 3, 'french'); 
-Insert into questions values(id, 'plan','plan-4.png','Votre entreprise comprend-elle ses obligations de Duty of Care?','La description des obligations de devoir de soins va',null,'Évaluer les risques', 4, 'french');
-Insert into questions values(id, 'plan','plan-5.png','Est-ce que vos politiques couvrent la santé et la sécurité des travailleurs mobiles?','La description des politiques va', null,'Plan', 5, 'french');
-Insert into questions values(id, 'plan','plan-6.png','Savez-vous qui est responsable de la gestion des risques de voyage dans votre organisation?','La description de la gestion des risques de voyage va',null,'Plan', 6, 'french');
-Insert into questions values(id, 'plan','plan-7.png','Savez-vous comment intégrer les composants de Travel Risk Management dans votre système de gestion des risques?','L intégration des composants de gestion du risque de voyage dans la description du système de gestion des risques va ',null,'Plan', 7, 'french');
-Insert into questions values(id, 'do','do-8.png', 'Avez-vous un processus d approbation de voyage qui comprend des évaluations des risques de voyage?','La description du processus d approbation de voyage va',null,'Politiques et processus', 1, 'french');
-Insert into questions values(id, 'do','do-9.png',  'Avez-vous des plans en place si les choses se passent mal?','Plans alternatifs si les choses vont mal la description va',null,'Politiques et processus', 2, 'french');
-Insert into questions values(id, 'do','do-10.png', 'Vérifiez-vous la sécurité et la sécurité des hôtels et des logements?','Vérifier la sécurité et la sécurité des hôtels',null,'Gérer la mobilité', 3,'french');
-Insert into questions values(id, 'do','do-11.png', 'Savez-vous combien de RTA (accidents de la circulation routière) votre entreprise a vécu au cours des 3 dernières années?','Road Traffic Accidents experiences description goes ',null,'Gérer la mobilité', 4,'french');
-Insert into questions values(id, 'do','do-12.png', 'Évaluez-vous l aptitude à voyager pour les travailleurs mobiles?','La description de la condition physique pour les travailleurs mobiles de voyage va',null,'Gérer la mobilité', 5,'french');
-Insert into questions values(id, 'do','do-13.png', 'Avez-vous un programme pour aider les gens à comprendre et à gérer leurs problèmes de santé existants?','La gestion de la description des problèmes de santé va',null,'Gérer la mobilité', 6,'french');
-Insert into questions values(id, 'do','do-14.png', 'Avez-vous des mesures en place pour vérifier la santé des personnes qui retournent au travail?','La gestion des problèmes de santé, la récupération de la description, va',null,'Gérer la mobilité', 7,'french');
-Insert into questions values(id, 'do','do-15.png', 'Votre personnel est-il au courant de vos politiques d atténuation des risques de voyage et de leurs responsabilités?','La description des plans et des responsabilités d atténuation des risques liés au voyage des employés',null,'Communiquer, éduquer et former', 8,'french');
-Insert into questions values(id, 'do','do-16.png', 'Est-ce que vos gens reçoivent une formation sur les risques aux destinations qu ils voyagent?','Formation sur les risques aux destinations lorsque l employé voyage ',null,'Communiquer, éduquer et former', 9,'french');
-Insert into questions values(id, 'do','do-17.png', 'Vos gestionnaires comprennent-ils leurs responsabilités lors de l approbation du voyage?','Les responsabilités des gestionnaires lors de l approbation de la description du voyage vont ',null,'Communiquer, éduquer et former', 10,'french');
-Insert into questions values(id, 'do','do-18.png','Avez-vous un système en place pour informer votre population d une situation qui pourrait les toucher?', 'Informer sur une situation qui influe sur la description des personnes va', null,'Localiser, surveiller, informer',11,'french');
-Insert into questions values(id, 'do','do-19.png', 'Avez-vous un système en place pour comptabiliser rapidement les personnes en situation d urgence?','Le compte d urgence pour la description des employés va',null,'Localiser, surveiller, informer',12,'french');
-Insert into questions values(id, 'do','do-20.png', 'Vos travailleurs mobiles ont-ils accès à des conseils et à un soutien 24/7?','L accessibilité 24/7 aux conseils et à la description du soutien va',null,'Conseils, assistance et évacuation', 13,'french');
-Insert into questions values(id, 'do','do-21.png','Vos opérateurs mobiles ont-ils accès à des informations et des conseils pertinents pour les soutenir lors de ces évaluations des risques?','Des informations et des conseils pertinents pour les accompagner lors de la description de ces évaluations de risque vont',null,'Conseils, assistance et évacuation', 14, 'french');
-Insert into questions values(id, 'check','check-22.png', 'Vos plans et procédures sont-ils testés pour l efficacité?','Les tests d efficacité pour la description des plans et des procédures vont',null,'Contrôle et évaluation', 1,'french');
-Insert into questions values(id, 'check','check-23.png', 'Avez-vous un système en place pour assurer la conformité à vos politiques et procédures?','Le système de politique et la description des procédures vont',null,'Contrôle et évaluation', 2, 'french');
-  
-insert into registrationfields values(id, 'f1', 'Prénom', 'text', 'true', null, 1, 'french');
-insert into registrationfields values(id, 'f2', 'Nom de famille', 'text', 'true', null, 2, 'french');
-insert into registrationfields values(id, 'f3', 'Profession', 'text', 'true', null, 3, 'french');
-insert into registrationfields values(id, 'f4', 'Email', 'text', 'true', null, 4, 'french');
-insert into registrationfields values(id, 'f5', 'Compagnie', 'text', 'true', null, 5, 'french');
-insert into registrationfields values(id, 'f6', 'Entreprise Industry', 'select', 'true', 'select optkey, optvalue from businessindustry;', 6, 'french');
-insert into registrationfields values(id, 'f7', 'Pays', 'select', 'true', 'select * from country;', 7, 'french');
-insert into registrationfields values(id, 'f8', 'Etat', 'select', 'true', 'select * from state;', 8, 'french');
-insert into registrationfields values(id, 'f9', 'À propos de moi', 'text', 'true', null, 9, 'french');
-insert into registrationfields values(id, 'f10', 'Le genre', 'select', 'true', 'select optkey, optvalue from gender;', 10, 'french');
-insert into registrationfields values(id, 'f11', 'Qualifications', 'select', 'true', 'select optkey, optvalue from qualifications;', 11, 'french');
-insert into registrationfields values(id, 'f12', 'Compétence', 'select', 'true', 'select optkey, optvalue from expertise;', 12, 'french');
-insert into registrationfields values(id, 'f13', 'Certifications', 'text', 'true', null, 13, 'french');
-insert into registrationfields values(id, 'f14', 'Loisirs', 'text', 'true', null, 14, 'french');
-insert into registrationfields values(id, 'f15', 'Domaine', 'select', 'true', 'select optkey, optvalue from domain;', 15, 'french');
-insert into registrationfields values(id, 'f16', 'Numéro de contact', 'text', 'true', null, 16, 'french');
-insert into registrationfields values(id, 'f17', 'J''accepte de recevoir une communication internationale de SOS sur les nouvelles concernant le risque de voyage', 'check', 'true', null, 17, 'french');
-insert into registrationfields values(id, 'f18', 'En soumettant, j''accepte les termes et conditions de International SOS et la politique de confidentialité. En savoir plus sur notre politique de confidentialité et de cookies et notre déclaration GDPR, n''hésitez pas à nous contacter si vous avez des questions ou souhaitez que vos informations de contact et activités soient complètement supprimées de notre base de données.', 'check', 'true', null, 18, 'french');
-
-Insert into labels values(id, 'french', 'welcomeHeader', 'Bienvenue dans l outil d auto-évaluation de l atténuation des risques de voyage.');                                      
-Insert into labels values(id, 'french', 'welcomeDesc', 'Cet outil d atténuation des risques pour les voyages de meilleures pratiques repose sur notre approche Plan-Do-Check de Duty of Care. À la fin de cette évaluation, vous recevrez un rapport décrivant:');
-Insert into labels values(id, 'french', 'welcomeFooter', 'Il faudrait environ 5 minutes pour terminer l examen.');
-Insert into labels values(id, 'french', 'regFormHeaderMsg', 'Remplissez le formulaire ci-dessous pour commencer votre évaluation de l atténuation des risques');
-Insert into labels values(id, 'french', 'regFormHeaderErrorMsg', 'Remplissez correctement les champs suivants et cliquez de nouveau sur le bouton Démarrer.');
-Insert into labels values(id, 'french', 'enter', 'Enter ');
-Insert into labels values(id, 'french', 'select', 'Sélectionner');
-Insert into labels values(id, 'french', 'mustbevalid', 'Doit être valide');
-Insert into labels values(id, 'french', 'email', 'Email');
-Insert into labels values(id, 'french', 'company', 'Label de l entreprise de DB');
-Insert into labels values(id, 'french', 'businessIndustry', 'Étiquette de l industrie commerciale de DB');
-Insert into labels values(id, 'french', 'state', 'Étiquette d État à partir de DB');
-Insert into labels values(id, 'french', 'country', 'Country Label From DB');
-Insert into labels values(id, 'french', 'requiredFields', 'Champs obligatoires de DB');
-Insert into labels values(id, 'french', 'pleaseSelect', 'Sélectionnez');
-Insert into labels values(id, 'french', 'progress', 'Progrès des questions');
-Insert into labels values(id, 'french', 'yes', 'Oui');
-Insert into labels values(id, 'french', 'no', 'Non');
-Insert into labels values(id, 'french', 'notsure', 'Pas certain');
-Insert into labels values(id, 'french', 'adminEmails', ' ');
 
 Insert into labels values(id, 'english', 'pdf_heading', 'TRAVEL RISK MANAGEMENT SELF-ASSESSMENT');
 Insert into labels values(id, 'english', 'pdf_sub_heading', 'Your Summary');
@@ -511,42 +441,19 @@ Insert into labels values(id, 'english', 'check_header_desc', 'The implementatio
 Insert into labels values(id, 'english', 'pdf_first_para_heading', 'Integrated Travel Risk Mitigation, a Duty of Care Plan-Do-Check approach');
 Insert into labels values(id, 'english', 'pdf_first_paragraph1', 'International SOS commissioned the first ever Duty of Care whitepaper. This reviews employers Duty of Care responsibilities and offers guidelines for the development of appropriate risk management strategies.');
 Insert into labels values(id, 'english', 'pdf_first_paragraph2', 'Following this sector first, our clients requested more research, tools and advice. Resulting in the commission of our Duty of Care and Travel Risk Management Global Benchmarking Study the first comprehensive and authoritative research publication on the topic.');
-Insert into labels values(id, 'english', 'pdf_first_paragraph3', 'The paper outlines a framework for organisations to ensure they are adequately meeting their Duty of Care obligations. The framework follows the \'plan-do-check\' approach.');
+Insert into labels values(id, 'english', 'pdf_first_paragraph3', 'The paper outlines a framework for organisations to ensure they are adequately meeting their Duty of Care obligations. The framework follows the ''plan-do-check'' approach.');
 Insert into labels values(id, 'english', 'pdf_first_paragraph4', 'For more information');
 Insert into labels values(id, 'english', 'image_click_description', 'Click here to open larger image of Integrated Travel Risk Mitigation');
-
-Insert into labels values(id, 'french', 'pdf_heading', 'AUTO-ÉVALUATION DE LA GESTION DES RISQUES DE VOYAGE');
-Insert into labels values(id, 'french', 'pdf_sub_heading', 'Votre résumé');
-Insert into labels values(id, 'french', 'pdf_you_scored', 'Vous avez marqué des points');
-Insert into labels values(id, 'french', 'pdf_last_para_heading', 'Besoin d\'aide pour vos réponses ou vos recommandations?');
-Insert into labels values(id, 'french', 'pdf_last_paragraph1', 'Contactez International SOS -');
-Insert into labels values(id, 'french', 'pdf_last_paragraph2', 'Les recommandations, les actions proposées et la vaste mesure de maturité sont à titre indicatif et ne constituent pas un avis formel. S\'il vous plaît');
-Insert into labels values(id, 'french', 'pdf_last_paragraph3', 'Contactez International SOS pour des analyses personnalisées et des recommandations spécifiques à votre organisation.');
-Insert into labels values(id, 'french', 'welcomePoints', 'Une large indication de la maturité actuelle de votre organisation en ce qui concerne les systèmes, processus et outils d\'atténuation des risques liés au voyage|Le niveau d\'action corrective requise pour minimiser les risques auxquels votre organisation et ses employés sont confrontés|Mesures recommandées pour améliorer vos systèmes|Aperçu de l\'approche Plan-Do-Check de Devoir de soins');
-Insert into labels values(id, 'french', 'plan_header_desc', 'Les principaux acteurs sont identifiés et le cadre de gestion de la gestion des risques liés à la santé et à la sécurité des déplacements est défini.');
-Insert into labels values(id, 'french', 'do_header_desc', 'Le plan de gestion des risques de voyage est implémenté et les outils sont déployés.');
-Insert into labels values(id, 'french', 'check_header_desc', 'La mise en œuvre du plan de gestion des risques de voyage est régulièrement testée et maintenue, ce qui permet une amélioration continue.');
-Insert into labels values(id, 'french', 'pdf_first_para_heading', 'Atténuation intégrée du risque de déplacement, une approche Plan-Do-Check de Devoir de soins');
-Insert into labels values(id, 'french', 'pdf_first_paragraph1', 'International SOS a commandé le tout premier document de Duty of Care. Cela examine les responsabilités des employeurs en matière de devoir de soins et offre des lignes directrices pour l\'élaboration de stratégies appropriées de gestion des risques.');
-Insert into labels values(id, 'french', 'pdf_first_paragraph2', 'Dans le cadre de ce secteur, nos clients ont demandé plus de recherches, d\'outils et de conseils. Résultat de la commission de notre gestion des risques et des risques de voyage Benchmarking mondial Étudiez la première publication de recherche complète et autorisée sur le sujet.');
-Insert into labels values(id, 'french', 'pdf_first_paragraph3', 'Le document décrit un cadre pour les organisations afin de s\'assurer qu\'elles respectent adéquatement leurs obligations en matière de devoir de diligence. Le cadre suit l\'approche plan-do-check.');
-Insert into labels values(id, 'french', 'pdf_first_paragraph4', 'Pour plus d\'informations');
-Insert into labels values(id, 'french', 'image_click_description', 'Cliquez ici pour ouvrir une image plus large de l\'atténuation intégrée des risques de voyage');
-
-
 
 Insert into labels values(id, 'english', 'plan_report_description', 'ANALYSE');
 Insert into labels values(id, 'english', 'do_report_description', 'MITIGATE');
 Insert into labels values(id, 'english', 'check_report_description', 'CONTROL');
 
-Insert into labels values(id, 'french', 'plan_report_description', 'ANALYSER');
-Insert into labels values(id, 'french', 'do_report_description', 'ATTÉNUER');
-Insert into labels values(id, 'french', 'check_report_description', 'CONTRÔLE');
 
 Insert into labels values(id, 'english', 'secName1', 'Analyse');
 Insert into labels values(id, 'english', 'secName2', 'Mitigate');
 Insert into labels values(id, 'english', 'secName3', 'Control');
 
-Insert into labels values(id, 'french', 'secName1', 'Analyser');
-Insert into labels values(id, 'french', 'secName2', 'Atténuer');
-Insert into labels values(id, 'french', 'secName3', 'Contrôle');
+ALTER TABLE `registrationinfo` 
+ADD COLUMN `f17` TINYINT(1) NULL AFTER `lang`,
+ADD COLUMN `f18` TINYINT(1) NULL AFTER `f17`;
