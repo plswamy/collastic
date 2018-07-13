@@ -2,6 +2,7 @@ package sas;
 
 public class SASConstants {
 	public static final String LANGUAGE = "sat_origin";
+	public static final String ORIGIN = "scholastic";
 	public static final String SELF_ASSESSMENT = "Self-assessment";
 	public static final String CUSTOM_OBJECT_DATA = "CustomObjectData";
 	public static final String CUSTOM_OBJECT_ID = "customobject.id";

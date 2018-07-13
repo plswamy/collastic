@@ -279,7 +279,20 @@
                                   }
                                   //if(showQuestion !== 'yes') {
                                     var tmpl = $('.question_template').clone(true);
+                                    var imgSrc;
                                     tmpl.find('.question_id').id = qid;
+                                    if(showQuestion === 'yes') {
+                                    	imgSrc = '/support/img/correct_answer.jpg';
+                                    } else {
+                                    	imgSrc = '/support/img/wrong_answer.jpg';
+                                    }
+                                    var img = $('<img>');
+                                	img.id = "qimg" + qid;
+                                	img.css('float','left');
+                                	img.width(25)
+                                	img.height(25);
+                                	img.attr('src', imgSrc);
+                                	tmpl.find('.question_image').append(img);
                                     tmpl.find('.question_number')[0].innerText = "Q" + qNum;
                                     tmpl.find('.question_text')[0].innerText = this.qry;
                                     tmpl.find('.question_desc')[0].innerText = this.description;
@@ -863,6 +876,7 @@
 										<div class="question_id" style="display: block;">
 											<div class="left col-xs-12 col-sm-6 col-md-6 col-lg-7">
 												<div class="padding">
+													<span class="question_image"></span>
 													<span class="question_number"></span>
 													<p class="question_text"></p>
 												</div>

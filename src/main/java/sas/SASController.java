@@ -1728,7 +1728,7 @@ public class SASController {
 					if(language == null || language.equals("english") || language.equals("null"))
 						language = "master";
 					LOGGER.info("LANGUAGE ::" + language);
-					map.put(properties.getProperty(SASConstants.LANGUAGE), language);
+					map.put(properties.getProperty(SASConstants.LANGUAGE), SASConstants.ORIGIN);
 					map.put(properties.getProperty(SASConstants.TNC_ACCEPTANCE), rs.getString("f18"));
 					map.put(properties.getProperty(SASConstants.COMMS_ACCEPTANCE), rs.getString("f17"));
 					map.put(properties.getProperty(SASConstants.BUSSINESS_INDUSTRY), rs.getString("f6"));

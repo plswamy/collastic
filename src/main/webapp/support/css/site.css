@@ -889,6 +889,13 @@ em {
 	margin-top: 2px;
 }
 
+.answered_no {
+	color: #D4002C!important;
+}
+
+.answered_yes {
+	color: #009354!important;
+}
 
 body.sos-dark-theme #logo {
 	background-color: #ffffff !important;
