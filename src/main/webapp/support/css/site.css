@@ -123,6 +123,11 @@ body {
   color: #c30000;
 }
 
+.not-required::after {
+	content: '  ';
+  font-size: 14px;
+}
+
 .required-text {
   color: #c30000;
   font-style: italic;

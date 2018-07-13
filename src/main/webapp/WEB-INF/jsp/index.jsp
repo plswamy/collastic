@@ -161,7 +161,12 @@
                             Hashtable<String, String> opts = (Hashtable<String, String>) request.getAttribute(fid);
                     
                         }
+                        
                         req = frequired.equals("true") ? "required" : "";
+                        if(fieldInfo.equals("f16")) {
+                        	frequired = "false";
+                        	req = frequired.equals("true") ? "required" : "";
+                        }
                     
                 %>
                         userFormFields['<%=forder%>'] = {
@@ -174,9 +179,12 @@
                             'req': '<%= req %>',
                             'fchecked': '<%= fchecked %>',
                         };
-                
                             userFormFields['<%=forder%>']['frequired'] = userFormFields['<%=forder%>']['frequired'] === 'true';
-                
+                            if(userFormFields['<%=forder%>'].fkey=='f16') {
+                            	//console.log("phone field"+userFormFields['<%=forder%>']['frequired']);	
+                            	userFormFields['<%=forder%>']['frequired'] = userFormFields['<%=forder%>']['frequired'] === 'false';
+                            	//console.log("phone field"+userFormFields['<%=forder%>']['frequired']);
+                            }
                 <%
                     }
                 %>
@@ -255,7 +263,9 @@
                                                         foptions = stok.nextToken();
                                                         opts = (Hashtable<String, String>) request.getAttribute(fid);
                                                     }
+                                                    
                                                     req = frequired.equals("true") ? "required" : "";
+                                                    
         
                                                     if(frequired.equals("true")) {
                                             %>
@@ -264,8 +274,14 @@
                                                         	if(!ftype.equals("check")){
                                                         %>													   
                                                         <div class="form-group form-field-<%=fid%> col-xs-12 col-sm-6 col-md-6 col-lg-6" data-forder="<%=forder%>" >
-                                                            <label for="ctl00_ContentPlaceHolder1_<%=fid%>" class="required" id="ctl00_ContentPlaceHolder1_<%=fid%>"><%= fdisplayname %></label>
-                                                            <% }if(ftype.equals("text")) { %>
+                                                        <%
+		                                                       	if(key1.equals("f16")) {
+		                                                       	 %>
+		                                                       		<label for="ctl00_ContentPlaceHolder1_<%=fid%>" class="not-required" id="ctl00_ContentPlaceHolder1_<%=fid%>"><%= fdisplayname %></label>
+			                                                    <%} else { %>
+		                                                            <label for="ctl00_ContentPlaceHolder1_<%=fid%>" class="required" id="ctl00_ContentPlaceHolder1_<%=fid%>"><%= fdisplayname %></label>
+		                                                        <%}
+                                                             }if(ftype.equals("text")) { %>
                                                             <input class="form-control user-form-field-<%=fid%>" name="ctl00$ContentPlaceHolder1$tbx<%=fid%>" type="text" maxlength="40" id="ctl00_ContentPlaceHolder1_tbx<%=fid%>" value="" placeholder="<%=enterLabel%><%= fdisplayname.toLowerCase() %>">
                                                             <% } else if(ftype.equals("select")){ %>
                                                                 <select class="form-control sos-index-select ddl<%=fid%> user-form-field-<%=fid%>" data-ddl="ddl<%=fid%>" name="ctl00$ContentPlaceHolder1$ddl<%=fid%>" id="ctl00_ContentPlaceHolder1_ddl<%=fid%>" <% if(fid.equals("f7")) { %> onchange="load_states(&#39;ctl00_ContentPlaceHolder1_ddlf8&#39;,this.selectedIndex);" <% } %>>
