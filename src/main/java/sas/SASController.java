@@ -627,8 +627,8 @@ public class SASController {
 		try {
 			con = dataSource.getConnection();
 			stmt = con.prepareStatement("select qid, avg(qresponse='yes') as yesAvg,avg(qresponse='no') as noAvg,avg(qresponse='notsure') as notSureAvg " + 
-										"from sas.userresponse, sas.questions " +
-										"where sas.questions.id = sas.userresponse.qid and sas.questions.lang=? "+
+										"from userresponse, questions " +
+										"where questions.id = userresponse.qid and questions.lang=? "+
 										"group by qid;");
 			stmt.setString(1, lang);
 			ResultSet rs = stmt.executeQuery();
