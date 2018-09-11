@@ -138,7 +138,7 @@
 												font-size="12pt" font-weight="bold" wrap-option="wrap" space-before="5mm"
 												font-variant="small-caps">
 												<fo:inline color="#232762"><xsl:value-of select="../pdf_section_sub_heading1" /> </fo:inline>
-												<fo:inline color="#FF0000"><xsl:value-of select="../pdf_section_sub_heading2" /> </fo:inline>
+												<xsl:text> </xsl:text><fo:inline color="#FF0000"><xsl:value-of select="../pdf_section_sub_heading2" /> </fo:inline><xsl:text> </xsl:text>
 												<fo:inline color="#232762"><xsl:value-of select="../pdf_section_sub_heading3" />: </fo:inline>
 											</fo:block>
 										</fo:table-cell>
