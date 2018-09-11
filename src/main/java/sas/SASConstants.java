@@ -56,7 +56,7 @@ public class SASConstants {
 	
 	public static final String QTYPE_ASSESS_RISK="Assess risks";
 	public static final String QTYPE_PLAN="Plan";
-	public static final String QTYPE_POLICIES="Policies & processess";
+	public static final String QTYPE_POLICIES="Policies & processes";
 	public static final String QTYPE_MOBILITY="Manage mobility";
 	public static final String QTYPE_COMMUNICATE="Communicate, Educate and Train";
 	public static final String QTYPE_LOCATE="Locate, Monitor, Inform";
