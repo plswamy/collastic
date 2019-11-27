@@ -1323,7 +1323,7 @@ public class SASController {
 			stmt = con.prepareStatement(questionInsert);
 			StringTokenizer qToken = new StringTokenizer(questions, "|");
 			while (qToken.hasMoreElements()) {
-				st = new StringTokenizer(qToken.nextToken(), "~");
+				//st = new StringTokenizer(qToken.nextToken(), "~");
 				String[] qtokens = qToken.nextToken().split("~",-1);
 				// id:section:question:desc:imageName
 				// id:section:question:subsection:desc:imageName:order
