@@ -1059,17 +1059,25 @@ public class SASController {
 			StringTokenizer qToken = new StringTokenizer(questions, "|");
 			String eqid = null;
 			while (qToken.hasMoreElements()) {
-				st = new StringTokenizer(qToken.nextToken(), ":");
+				st = new StringTokenizer(qToken.nextToken(), "~");
 				// id:section:question:subsection:desc:imageName:order
-				if(st.countTokens()==7){
-					temp1 = st.nextToken(); // id
+				//if(st.countTokens()==7){
+				String[] qtokens = qToken.nextToken().split("~",-1);
+				temp1 = qtokens[0];//st.nextToken(); // id
+				temp2 = qtokens[1];//st.nextToken(); // qtype
+				temp3 = qtokens[2];//st.nextToken(); // qtext
+				temp6 = qtokens[3];//st.nextToken(); // qsubtype
+				temp4 = qtokens[4];//st.nextToken(); // qdesc
+				temp5 = qtokens[5];//st.nextToken(); // imagename
+				temp7 = qtokens[6];//st.nextToken(); // qorder
+					/*temp1 = st.nextToken(); // id
 					temp2 = st.nextToken(); // qtype
 					temp3 = st.nextToken(); // qtext
 					temp6 = st.nextToken(); // qsubtype
 					temp4 = st.nextToken(); // qdesc
 					temp5 = st.nextToken(); // imagename
 					//String imagetype = temp5.substring(temp5.lastIndexOf("."));
-					temp7 = st.nextToken(); // order
+					temp7 = st.nextToken(); // order*/
 					if (!nullCheck(temp1).equals("-1")) {
 						stmt.setString(1, temp3);
 						stmt.setString(2, temp4);
@@ -1104,9 +1112,9 @@ public class SASController {
 							pstmt.executeUpdate();
 						}
 					}
-				} else {
+				/*} else {
 					LOGGER.error("Improper question for the token : " + qToken);
-				}
+				}*/
 			}
 			// deletedquestions = deletedquestions.replaceAll("|", ",");
 			if (deletedquestions != null && deletedquestions.length() > 1) {
@@ -1241,18 +1249,20 @@ public class SASController {
 			stmt = con.prepareStatement(questionInsert);
 			StringTokenizer qToken = new StringTokenizer(questions, "|");
 			while (qToken.hasMoreElements()) {
-				st = new StringTokenizer(qToken.nextToken(), ":");
+				st = new StringTokenizer(qToken.nextToken(), "~");
 				LOGGER.info("st token length....:" + st.countTokens());
 				// id:section:question:desc:imageName
 				// id:section:question:subsection:desc:imageName:order
-				if(st.countTokens()==7){
-					temp1 = st.nextToken(); // id
-					temp2 = st.nextToken(); // qtype
-					temp3 = st.nextToken(); // qtext
-					temp4 = st.nextToken(); // qsubtype
-					temp5 = st.nextToken(); // qdesc
-					temp6 = st.nextToken(); // imagename
-					temp7 = st.nextToken(); // qorder
+				//if(st.countTokens()==7){
+				String[] qtokens = qToken.nextToken().split("~",-1);
+					temp1 = qtokens[0];//st.nextToken(); // id
+					temp2 = qtokens[1];//st.nextToken(); // qtype
+					temp3 = qtokens[2];//st.nextToken(); // qtext
+					temp4 = qtokens[3];//st.nextToken(); // qsubtype
+					temp5 = qtokens[4];//st.nextToken(); // qdesc
+					temp6 = qtokens[5];//st.nextToken(); // imagename
+					temp7 = qtokens[6];//st.nextToken(); // qorder
+					System.out.println(qtokens.toString());
 					//String imagetype = temp6.substring(temp6.lastIndexOf("."));
 					//System.out.println(temp2 + "-" + lang + "-"+ temp1 + imagetype);
 					stmt.setString(1, temp3);
@@ -1263,9 +1273,9 @@ public class SASController {
 					stmt.setString(5, temp7);
 					stmt.setString(6, temp1);
 					stmt.executeUpdate();
-				} else {
+				/*} else {
 					LOGGER.error("Improper question for the token : " + qToken);
-				}
+				}*/
 			}
 		} catch (Exception exp) {
 			LOGGER.error("cannot able to update data from method updateData : " , exp);
@@ -1313,29 +1323,31 @@ public class SASController {
 			stmt = con.prepareStatement(questionInsert);
 			StringTokenizer qToken = new StringTokenizer(questions, "|");
 			while (qToken.hasMoreElements()) {
-				st = new StringTokenizer(qToken.nextToken(), ":");
+				st = new StringTokenizer(qToken.nextToken(), "~");
+				String[] qtokens = qToken.nextToken().split("~",-1);
 				// id:section:question:desc:imageName
 				// id:section:question:subsection:desc:imageName:order
-				if(st.countTokens()==7) {
-					temp = st.nextToken(); // id avoid
-					String qtype = st.nextToken();
+				//if(st.countTokens()==7) {
+					temp = qtokens[0];//st.nextToken(); // id avoid
+					String qtype = qtokens[1];//st.nextToken();
 					stmt.setString(1, qtype); // qtype
-					stmt.setString(2, st.nextToken()); // qtext
-					stmt.setString(7, st.nextToken()); // subsection
-					stmt.setString(3, st.nextToken()); // qdesc
-					stmt.setString(4, st.nextToken()); // imagename 
+					stmt.setString(2, qtokens[2]);//st.nextToken()); // qtext
+					stmt.setString(7, qtokens[3]);//st.nextToken()); // subsection
+					String questionDescription = qtokens[4];//st.nextToken();
+					stmt.setString(3, questionDescription); // qdesc
+					stmt.setString(4, qtokens[5]);//st.nextToken()); // imagename 
 					//String imageName = st.nextToken();
 					//String imagetype = imageName.substring(imageName.lastIndexOf("."));
 					//stmt.setString(4, qtype + "-" + lang + "-"+ newId + imagetype);
 					//System.out.println(qtype + "-" + lang + "-"+ newId + imagetype);
 					stmt.setString(5, lang);
 					stmt.setString(6, temp); // parentquestion
-					stmt.setString(8, st.nextToken());
+					stmt.setString(8, qtokens[6]);//st.nextToken());
 	
 					stmt.executeUpdate();
-				} else {
+				/*} else {
 					LOGGER.error("Improper question for the token : " + qToken);
-				}
+				}*/
 			}
 		} catch (Exception exp) {
 			LOGGER.error("cannot able to insert data from method insertData : " , exp);
